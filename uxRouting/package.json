@@ -1,0 +1,17 @@
+{
+  "name": "uxRouting",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.42",
+    "@uirouter/angularjs": "^1.0.15",
+    "@uirouter/visualizer": "^6.0.0",
+    "angular": "^1.6.9",
+    "angular-meteor": "^1.3.12",
+    "marked": "^0.3.19",
+    "meteor-node-stubs": "^0.3.2",
+    "underscore": "^1.8.3"
+  }
+}
