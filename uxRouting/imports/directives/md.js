@@ -1,11 +1,10 @@
 import angular from 'angular';
-// import markedLib from 'marked';
+import markedLib from 'marked';
 
-let markedLib = {};
 
-export default angular.module('mdDirective', [])
+angular.module('mdDirective', [])
     .constant('__marked', markedLib)
-    .directive('marked', ['__marked', function(marked) {
+    .directive('marked', ['__marked','$compile', function (marked,$compile) {
         return {
             restrict: 'AE',
             replace: true,
@@ -14,13 +13,19 @@ export default angular.module('mdDirective', [])
                 mdFile: '=',
                 marked: '='
             },
-            link: function(scope, element, attrs) {
-                var value = scope.marked || element.text() || '';
+            link: function (scope, element, attrs) {
+                var mdNode = element;
+                //Change pre elements to div
+                if (element[0].tagName == "PRE") {
+                    mdNode = $compile("<div></div>")(scope);
+                    element.replaceWith(mdNode);
+                }
+                let value = scope.marked || element.text() || '';
                 set(value);
 
                 function set(val) {
                     var m = marked(val || '', scope.opts || null);
-                    element.html(m);
+                    mdNode.html(m);
                 }
 
                 if (attrs.marked) {
@@ -30,3 +35,5 @@ export default angular.module('mdDirective', [])
             }
         };
     }]);
+
+export default "mdDirective";

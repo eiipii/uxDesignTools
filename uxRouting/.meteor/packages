@@ -19,7 +19,7 @@ shell-server            # Server-side component of the `meteor shell` command
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 angular-templates
-underscore@1.0.10
+underscore
 less@2.7.11
 twbs:bootstrap
 imsky:holder
