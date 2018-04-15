@@ -10,7 +10,6 @@ angular.module('mdDirective', [])
             replace: true,
             scope: {
                 opts: '=',
-                mdFile: '=',
                 marked: '='
             },
             link: function (scope, element, attrs) {

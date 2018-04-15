@@ -6,6 +6,8 @@ import {Visualizer} from '@uirouter/visualizer';
 
 import appListOfStates from '../imports/routing/routingRoot';
 import mdDirective from '../imports/directives/md';
+import loremDirective from '../imports/directives/lorem';
+import holderDirective from '../imports/directives/holderDirective';
 
 function appConfig($locationProvider, $urlRouterProvider, $stateRegistryProvider) {
     'ngInject';
@@ -30,6 +32,8 @@ function bindVisualizer($uiRouter, $trace) {
 angular.module('ux-app', [
     angularMeteor,
     mdDirective,
+    holderDirective,
+    loremDirective,
     uiRouter
 ]).config(appConfig)
     .run(bindStateOnScope)
