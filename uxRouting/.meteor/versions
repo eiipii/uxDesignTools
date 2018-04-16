@@ -17,7 +17,6 @@ ddp@1.4.0
 ddp-client@2.3.2
 ddp-common@1.4.0
 ddp-server@2.1.2
-deps@1.0.12
 diff-sequence@1.1.0
 dynamic-import@0.4.0-beta162.20
 ecmascript@0.11.0-beta162.20

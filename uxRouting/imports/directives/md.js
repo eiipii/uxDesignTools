@@ -1,5 +1,5 @@
 import angular from 'angular';
-import markedLib from 'marked';
+import markedLib from './marked';
 
 
 angular.module('mdDirective', [])
