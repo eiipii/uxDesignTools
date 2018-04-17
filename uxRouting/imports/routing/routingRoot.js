@@ -1,5 +1,6 @@
 import docTemplate from './views/docTemplate.html';
 import directivesTemplate from './views/directivesTemplate.html';
+import navigationTemplate from './views/navigationTemplate.html';
 import routingTemplate from './views/routingTemplate.html';
 import bootstrapRootTemplate from './views/bootstrapRootTemplate.html';
 import column12Flow from './views/boot/colomn12Flow.html';
@@ -20,6 +21,8 @@ import mdTemplate from './views/dir/mdTemplate.html';
 import loremTemplate from './views/dir/lorem.html';
 import holderjsTemplate from './views/dir/holderjs.html';
 
+import onePageLinearNav from './views/nav/onePageLinear.html';
+import byLinearContextNav from './views/nav/byLinearContextNav.html';
 
 var appListOfStates = [{
     name: 'doc',
@@ -138,6 +141,18 @@ var appListOfStates = [{
             templateUrl: wellContent
         }
     }
+}, {
+    name: 'navigation',
+    url: "/navigation",
+    templateUrl: navigationTemplate
+}, {
+    name: 'navigation.onePageLinear',
+    url: "/onePageLinear",
+    templateUrl: onePageLinearNav
+}, {
+    name: 'navigation.byLinearContext',
+    url: "/byLinearContext",
+    templateUrl: byLinearContextNav
 }
 ];
 
