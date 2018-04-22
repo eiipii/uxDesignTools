@@ -1,6 +1,7 @@
 import docTemplate from './views/docTemplate.html';
 import directivesTemplate from './views/directivesTemplate.html';
 import navigationTemplate from './views/navigationTemplate.html';
+import leafComponentsTemplate from './views/leafComponentsTemplate.html';
 import routingTemplate from './views/routingTemplate.html';
 import bootstrapRootTemplate from './views/bootstrapRootTemplate.html';
 import column12Flow from './views/boot/colomn12Flow.html';
@@ -8,6 +9,7 @@ import column6x6Flow from './views/boot/column6x6Flow.html';
 import column10x2Flow from './views/boot/column10x2Flow.html';
 import hccfLayout from './views/layout/hccfLayout.html';
 import hhccfLayout from './views/layout/hhccfLayout.html';
+import hLinearLayout from './views/layout/hLinearLayout.html';
 import navContentLayout from './views/layout/navContentLayout.html';
 
 import mediaContent from './views/boot/mediaContent.html';
@@ -25,6 +27,9 @@ import holderjsTemplate from './views/dir/holderjs.html';
 
 import onePageLinearNav from './views/nav/onePageLinear.html';
 import byLinearContextNav from './views/nav/byLinearContextNav.html';
+
+//MLear components
+import navbarMlearnTemplate from './views/mlearn/navbarMlearnTemplate.html';
 
 var appListOfStates = [{
     name: 'doc',
@@ -234,6 +239,46 @@ var appListOfStates = [{
             template: '<img holder="holder.js/100px200?bg=#9D344B&fg=#EC9DAE">'
         }
     }
+}, {
+    name: 'layouts.hLinearLayout',
+    url: "/hLinearLayout",
+    templateUrl: hLinearLayout
+}, {
+    name: 'layouts.hLinearLayout.color',
+    url: "/color",
+    views: {
+        header: {
+            template: '<img holder="holder.js/100px120?theme=sky&text=Header">'
+        },
+        content: {
+            template: '<img holder="holder.js/100px1500?theme=gray&text=content">'
+        },
+        footer: {
+            template: '<img holder="holder.js/100px500?theme=social&text=footer">'
+        }
+    }
+}, {
+    name: 'layouts.hLinearLayout.content',
+    url: "/content",
+    views: {
+        header: {
+            templateUrl: navbarMlearnTemplate
+        },
+        content: {
+            template: '<img holder="holder.js/100px1500?theme=gray&text=content">'
+        },
+        footer: {
+            template: '<img holder="holder.js/100px500?theme=social&text=footer">'
+        }
+    }
+}, {
+    name: 'mlearn',
+    url: "/mlearn",
+    templateUrl: leafComponentsTemplate
+}, {
+    name: 'mlearn.navbarMlearn',
+    url: "/navbarMlearn",
+    templateUrl: navbarMlearnTemplate
 }, {
     name: 'navigation',
     url: "/navigation",
