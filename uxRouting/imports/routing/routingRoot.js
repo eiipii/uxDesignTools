@@ -30,6 +30,9 @@ import byLinearContextNav from './views/nav/byLinearContextNav.html';
 
 //MLear components
 import navbarMlearnTemplate from './views/mlearn/navbarMlearnTemplate.html';
+import helloSearchTemplate from './views/mlearn/helloSearchTemplate.html';
+import overviewTemplate from './views/mlearn/overviewTemplate.html';
+import loginFormTemplate from './views/mlearn/loginFormTemplate.html';
 
 var appListOfStates = [{
     name: 'doc',
@@ -279,6 +282,18 @@ var appListOfStates = [{
     name: 'mlearn.navbarMlearn',
     url: "/navbarMlearn",
     templateUrl: navbarMlearnTemplate
+}, {
+    name: 'mlearn.helloSearch',
+    url: "/helloSearch",
+    templateUrl: helloSearchTemplate
+}, {
+    name: 'mlearn.overview',
+    url: "/overview",
+    templateUrl: overviewTemplate
+}, {
+    name: 'mlearn.loginForm',
+    url: "/loginForm",
+    templateUrl: loginFormTemplate
 }, {
     name: 'navigation',
     url: "/navigation",
