@@ -2,7 +2,7 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 
 import uiRouter from '@uirouter/angularjs';
-import {Visualizer} from '@uirouter/visualizer';
+import {StateVisualizer, Visualizer} from '@uirouter/visualizer';
 
 import appListOfStates from '../imports/routing/routingRoot';
 import mdDirective from '../imports/directives/md';
@@ -24,8 +24,16 @@ function bindStateOnScope($rootScope, $state, $stateParams, $http) {
 }
 
 function bindVisualizer($uiRouter, $trace) {
-    var pluginInstance = $uiRouter.plugin(Visualizer);
-    $trace.enable('TRANSITION')
+    // var pluginInstance = $uiRouter.plugin(Visualizer);
+    // $trace.enable('TRANSITION')
+    $uiRouter.plugin(Visualizer, {
+        state: false
+    });
+    StateVisualizer.create($uiRouter, undefined, {
+        height: 600,
+        width: 600
+    });
+    $trace.enable('TRANSITION');
 }
 
 

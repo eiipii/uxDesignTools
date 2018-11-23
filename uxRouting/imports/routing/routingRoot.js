@@ -5,7 +5,9 @@ import leafComponentsTemplate from './views/leafComponentsTemplate.html';
 import routingTemplate from './views/routingTemplate.html';
 import bootstrapRootTemplate from './views/bootstrapRootTemplate.html';
 import column12Flow from './views/boot/colomn12Flow.html';
+import column12FlowFluid from './views/boot/column12FlowFluid.html';
 import column6x6Flow from './views/boot/column6x6Flow.html';
+import headerContentTemplate from './views/boot/headerContentTemplate.html';
 import column10x2Flow from './views/boot/column10x2Flow.html';
 import hccfLayout from './views/layout/hccfLayout.html';
 import hhccfLayout from './views/layout/hhccfLayout.html';
@@ -21,18 +23,122 @@ import tableContent from './views/boot/tableContent.html';
 import navigationContent from './views/boot/navigationContent.html';
 import navStackedContent from './views/boot/navStackedContent.html';
 
+import navbarContent from './views/boot/content/navbar.html';
+
 import mdTemplate from './views/dir/mdTemplate.html';
 import loremTemplate from './views/dir/lorem.html';
 import holderjsTemplate from './views/dir/holderjs.html';
 
 import onePageLinearNav from './views/nav/onePageLinear.html';
 import byLinearContextNav from './views/nav/byLinearContextNav.html';
-
 //MLear components
 import navbarMlearnTemplate from './views/mlearn/navbarMlearnTemplate.html';
 import helloSearchTemplate from './views/mlearn/helloSearchTemplate.html';
 import overviewTemplate from './views/mlearn/overviewTemplate.html';
 import loginFormTemplate from './views/mlearn/loginFormTemplate.html';
+
+
+let layoutCol12 = [{
+    name: 'routing.bootstrapContainer.colomn12View',
+    url: "/colomn12",
+    templateUrl: column12Flow
+}, {
+    name: 'routing.bootstrapContainer.colomn12View.images',
+    url: "/images",
+    templateUrl: imagesContent
+}, {
+    name: 'routing.bootstrapContainer.colomn12View.boxes',
+    url: "/boxes",
+    template: "<img holder=\"holder.js/100px75?theme=social&text=Box1\">"
+}, {
+    name: 'routing.bootstrapContainer.colomn12View.panels',
+    url: "/panels",
+    templateUrl: panelContent
+}, {
+    name: 'routing.bootstrapContainer.colomn12View.form',
+    url: "/form",
+    templateUrl: formContent
+}];
+
+let layoutCol12Fluid = [{
+    name: 'routing.bootstrapContainer.colomn12ViewFluid',
+    url: "/colomn12",
+    templateUrl: column12FlowFluid
+}, {
+    name: 'routing.bootstrapContainer.colomn12ViewFluid.images',
+    url: "/images",
+    templateUrl: imagesContent
+}, {
+    name: 'routing.bootstrapContainer.colomn12ViewFluid.boxes',
+    url: "/boxes",
+    template: "<img holder=\"holder.js/100px75?theme=social&text=Box1\">"
+}, {
+    name: 'routing.bootstrapContainer.colomn12ViewFluid.panels',
+    url: "/panels",
+    templateUrl: panelContent
+}, {
+    name: 'routing.bootstrapContainer.colomn12ViewFluid.form',
+    url: "/form",
+    templateUrl: formContent
+}];
+
+
+let layoutCol6x6 = [{
+    name: 'routing.bootstrapContainer.colomn6x6View',
+    url: "/colomn6x6",
+    templateUrl: column6x6Flow
+}, {
+    name: 'routing.bootstrapContainer.colomn6x6View.mixed',
+    url: "/mixed",
+    views: {
+        left: {
+            templateUrl: formContent
+        },
+        right: {
+            templateUrl: panelContent
+        }
+    }
+}, {
+    name: 'routing.bootstrapContainer.colomn6x6View.box',
+    url: "/mixed",
+    views: {
+        left: {
+            template: "<img holder=\"holder.js/100px75?theme=social&text=LEFT\">"
+        },
+        right: {
+            template: "<img holder=\"holder.js/100px107?bg=#c3f3ab&fg=#9cc288&text=Rigth\">"
+        }
+    }
+}, {
+    name: 'routing.bootstrapContainer.colomn6x6View.mixed2',
+    url: "/mixed2",
+    views: {
+        left: {
+            templateUrl: tableContent
+        },
+        right: {
+            templateUrl: imagesContent
+        }
+    }
+}];
+
+
+let layoutHeaderCotent = [{
+    name: 'routing.bootstrapContainer.headerContent',
+    url: "/headerContent",
+    templateUrl: headerContentTemplate
+}, {
+    name: 'routing.bootstrapContainer.headerContent.mixed',
+    url: "/mixed",
+    views: {
+        header: {
+            templateUrl: navbarContent
+        },
+        content: {
+            templateUrl: panelContent
+        }
+    }
+}];
 
 var appListOfStates = [{
     name: 'doc',
@@ -59,55 +165,13 @@ var appListOfStates = [{
     url: "/routing",
     templateUrl: routingTemplate
 }, {
-    name: 'layouts',
-    url: "/layouts",
-    templateUrl: routingTemplate
-}, {
     name: 'routing.bootstrapContainer',
     url: "/boot",
     templateUrl: bootstrapRootTemplate
 }, {
-    name: 'routing.bootstrapContainer.colomn12View',
-    url: "/colomn12",
-    templateUrl: column12Flow
-}, {
-    name: 'routing.bootstrapContainer.colomn12View.images',
-    url: "/images",
-    templateUrl: imagesContent
-}, {
-    name: 'routing.bootstrapContainer.colomn12View.panels',
-    url: "/panels",
-    templateUrl: panelContent
-}, {
-    name: 'routing.bootstrapContainer.colomn12View.form',
-    url: "/form",
-    templateUrl: formContent
-}, {
-    name: 'routing.bootstrapContainer.colomn6x6View',
-    url: "/colomn6x6",
-    templateUrl: column6x6Flow
-}, {
-    name: 'routing.bootstrapContainer.colomn6x6View.mixed',
-    url: "/mixed",
-    views: {
-        left: {
-            templateUrl: imagesContent
-        },
-        right: {
-            templateUrl: panelContent
-        }
-    }
-}, {
-    name: 'routing.bootstrapContainer.colomn6x6View.mixed2',
-    url: "/mixed2",
-    views: {
-        left: {
-            templateUrl: tableContent
-        },
-        right: {
-            templateUrl: imagesContent
-        }
-    }
+    name: 'layouts',
+    url: "/layouts",
+    templateUrl: routingTemplate
 }, {
     name: 'routing.bootstrapContainer.colomn10x2View',
     url: "/colomn10x2",
@@ -180,10 +244,10 @@ var appListOfStates = [{
     name: 'layouts.navContent.color',
     url: "/color",
     views: {
-        nav : {
+        nav: {
             template: '<img holder="holder.js/100px400?theme=social&text=Navigation">'
         },
-        content : {
+        content: {
             template: '<img holder="holder.js/100px800?theme=social&text=Content">'
         }
     }
@@ -191,10 +255,10 @@ var appListOfStates = [{
     name: 'layouts.navContent.content',
     url: "/content",
     views: {
-        nav : {
+        nav: {
             templateUrl: navStackedContent
         },
-        content : {
+        content: {
             templateUrl: mediaContent
         }
     }
@@ -309,5 +373,10 @@ var appListOfStates = [{
 }
 ];
 
+let allRoutings = appListOfStates
+    .concat(layoutCol12)
+    .concat(layoutCol12Fluid)
+    .concat(layoutHeaderCotent)
+    .concat(layoutCol6x6);
 
-export default appListOfStates;
+export default allRoutings;
